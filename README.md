@@ -1,2 +1,2 @@
 # Simon-Game
-This is a simon game built with html css and vanilla javascript.
+Simon game is a Freecodecamp project i made with html css and vanilla javascript.
