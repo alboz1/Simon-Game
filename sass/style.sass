@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700')
+
+$green: #3BC776
+$red: #C73B3B
+$yellow: #C7B63B
+$blue: #3B89C7
+
+body
+	height: 100vh
+	background: radial-gradient(#1c2128, #141a23)
+	font-family: 'Roboto', sans-serif
+	display: flex
+	justify-content: center
+	align-items: center
+
+.container
+	width: 450px
+	height: 450px
+	box-shadow: 0 0 10px rgba(0,0,0,.25)
+	border-radius: 50%
+	overflow: hidden
+	position: relative
+	.button
+		width: 50%
+		height: 50%
+		float: left
+		opacity: 0.6
+		&.green
+			background: $green
+		&.red
+			background: $red
+		&.yellow
+			background: $yellow
+		&.blue
+			background: $blue
+		&.active
+			opacity: 1
+	.main-board
+		width: 50%
+		height: 50%
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+		background: #282c33
+		box-shadow: 0 0 10px rgba(0,0,0,.25)
+		padding: 20px
+		border-radius: 50%
+		text-align: center
+		color: white
+		
+		.board-header
+			font-size: 18px
+			letter-spacing: 2px
+		.border
+			width: 200px
+			max-width: 100%
+			border: none
+			height: 1px
+			background: rgba(white, .8)
+		.body
+			margin-top: 21px
+		.screen-counter
+			width: 70px
+			height: 18px
+			background: #101118
+			border-radius: 3px
+			box-shadow: inset 0 0 5px rgba(0,0,0, .3)
+			padding: 7px 5px
+			margin: 10px auto
+		.buttons-wrapper
+			display: flex
+			justify-content: space-around
+			p
+				font-size: 12px
+			.btn
+				width: 25px
+				height: 25px
+				border-radius: 50%
+				border: none
+				box-shadow: 0 0 10px rgba(0,0,0,.25)
+				outline: none
+				cursor: pointer
+				&:active
+					transform: translateY(2px)
+			.start-button .btn
+				background: $red
+			.strict-button .btn
+				background: $yellow
+				position: relative
+				&:after
+					content: ''
+					width: 10px
+					height: 10px
+					background: $red
+					position: absolute
+					top: 50%
+					left: 50%
+					margin: -5px 0 0 -5px
+					border-radius: 50%
+					opacity: 0
+				&.on:after
+					opacity: 1
+
+@media (max-width: 450px)
+	.container
+		width: 320px
+		height: 320px
+		.main-board 
+			.board-header
+				font-size: 16px
+				h3
+					margin: 5px 0
