@@ -6,7 +6,7 @@ const game = {
 	isPlaying: false,
 	strict: false,
 	restart: false,
-	
+
 	init: function() {
 		this.isPlaying = true;
 		view.eventListeners();
@@ -16,7 +16,7 @@ const game = {
 	},
 	activeButton: function(button) {
 		button.classList.add('active');
-		
+
 		setTimeout(_ => {
 			button.classList.remove('active');
 		}, 500);
@@ -47,7 +47,7 @@ const game = {
 		this.userInput = [];
 		this.round = 0;
 		this.index = 0;
-		
+
 		setTimeout(_ => {
 			view.screen(game.round, 'white');
 			this.rounds();
@@ -63,7 +63,7 @@ const game = {
 				this.rounds();
 				view.activeButton();
 				this.isPlaying = false;
-			}, 1000);	
+			}, 1000);
 		}
 	}
 };
@@ -84,20 +84,20 @@ const view = {
 	eventListeners: function() {
 		const buttons = document.querySelectorAll('.button');
 		const strictBtn = document.querySelector('.strict-button .btn');
-		
-		buttons.forEach(button => {
+
+		Array.from(buttons).forEach(button => {
 			button.addEventListener('click', function() {
 				const audio = this.querySelector('audio');
 				//stops the user to play the button if the game is playing
 				if (game.isPlaying) return;
-				
+
 				game.userInput.push(this);
 				game.activeButton(this);
 				game.playSound(audio);
 				handlers.checkUserInput(this);
 			});
 		});
-		
+
 		strictBtn.addEventListener('click', function() {
 			this.classList.toggle('on');
 			game.strict = !game.strict;
@@ -116,14 +116,14 @@ const handlers = {
 				game.isPlaying = true;
 				game.index++;
 				game.userInput = [];
-				
+
 				setTimeout(_ => {
 					game.rounds();
 					game.grabStoredButtons(_ => {
 						view.activeButton();
 						game.isPlaying = false;
 					});
-				}, 1000);	
+				}, 1000);
 			}
 		} else if (input !== game.buttons[game.userInput.length - 1]) {
 			if (game.strict) {
@@ -134,7 +134,7 @@ const handlers = {
 				game.isPlaying = true;
 				game.userInput = [];
 				view.screen('!!', '#C73B3B');
-				
+
 				setTimeout(_ => {
 					view.screen(game.round, 'white');
 					game.grabStoredButtons(_ => {
