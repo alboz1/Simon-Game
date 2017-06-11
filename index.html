@@ -9,49 +9,49 @@
 </head>
 
 <body>
-  <div class="container">
-	<div class="button green" data-num="0">
-		<audio>
-			<source src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3" type="audio/mpeg">
-		</audio>
-	</div>
-	<div class="button red" data-num="1">
-		<audio>
-			<source src="https://s3.amazonaws.com/freecodecamp/simonSound2.mp3" type="audio/mpeg">
-		</audio>
-	</div>
-	<div class="button yellow" data-num="2">
-		<audio>
-			<source src="https://s3.amazonaws.com/freecodecamp/simonSound3.mp3" type="audio/mpeg">
-		</audio>
-	</div>
-	<div class="button blue" data-num="3">
-		<audio>
-			<source src="https://s3.amazonaws.com/freecodecamp/simonSound4.mp3" type="audio/mpeg">
-		</audio>
-	</div>
-	
-	<div class="main-board">
-		<header class="board-header">
-			<h3>SIMON</h3>
-		</header>
-		<hr class="border">
-		<div class="body">
-			<div class="screen-counter">
-				<span></span>
-			</div>
-			<div class="buttons-wrapper">
-				<div class="start-button">
-					<p>START</p>
-					<button onclick="game.start()" class="btn"></button>
+	<div class="container">
+		<div class="button green" data-num="0">
+			<audio>
+				<source src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3" type="audio/mpeg">
+			</audio>
+		</div>
+		<div class="button red" data-num="1">
+			<audio>
+				<source src="https://s3.amazonaws.com/freecodecamp/simonSound2.mp3" type="audio/mpeg">
+			</audio>
+		</div>
+		<div class="button yellow" data-num="2">
+			<audio>
+				<source src="https://s3.amazonaws.com/freecodecamp/simonSound3.mp3" type="audio/mpeg">
+			</audio>
+		</div>
+		<div class="button blue" data-num="3">
+			<audio>
+				<source src="https://s3.amazonaws.com/freecodecamp/simonSound4.mp3" type="audio/mpeg">
+			</audio>
+		</div>
+		
+		<div class="main-board">
+			<header class="board-header">
+				<h3>SIMON</h3>
+			</header>
+			<hr class="border">
+			<div class="body">
+				<div class="screen-counter">
+					<span></span>
 				</div>
-				<div class="strict-button">
-					<p>STRICT</p>
-					<button class="btn"></button>
+				<div class="buttons-wrapper">
+					<div class="start-button">
+						<p>START</p>
+						<button onclick="game.start()" class="btn"></button>
+					</div>
+					<div class="strict-button">
+						<p>STRICT</p>
+						<button class="btn"></button>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 	</div>
   	<script src="js/index.js"></script>
 </body>
